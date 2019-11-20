@@ -29,6 +29,7 @@ go_binary(
     name = "bb_storage",
     embed = [":go_default_library"],
     pure = "on",
+    data = ["@com_github_buildbarn_bb_deployments//bare/config:config_json"],
     visibility = ["//visibility:public"],
 )
 

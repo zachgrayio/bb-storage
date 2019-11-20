@@ -74,9 +74,15 @@ load(":go_dependencies.bzl", "bb_storage_go_dependencies")
 
 bb_storage_go_dependencies()
 
-http_archive(
+# use local instead
+#http_archive(
+#    name = "com_github_buildbarn_bb_deployments",
+#    sha256 = "cf910624a50d3f1f4c8af98d96f4ff7cbdd51f2c107315ac835256776a41df1c",
+#    strip_prefix = "bb-deployments-cf505b7f363ce87798a367d6741b8f550a5e077a",
+#    url = "https://github.com/buildbarn/bb-deployments/archive/cf505b7f363ce87798a367d6741b8f550a5e077a.tar.gz",
+#)
+
+local_repository(
     name = "com_github_buildbarn_bb_deployments",
-    sha256 = "cf910624a50d3f1f4c8af98d96f4ff7cbdd51f2c107315ac835256776a41df1c",
-    strip_prefix = "bb-deployments-cf505b7f363ce87798a367d6741b8f550a5e077a",
-    url = "https://github.com/buildbarn/bb-deployments/archive/cf505b7f363ce87798a367d6741b8f550a5e077a.tar.gz",
+    path = "../bb-deployments",
 )
